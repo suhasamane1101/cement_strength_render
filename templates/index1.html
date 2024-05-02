@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" />
+
+  <style>
+    body {
+      margin: 0;
+      line-height: normal;
+    }
+    .button-33 {
+      border-radius: 100px;
+      box-shadow: rgba(158, 187, 44, 0.2) 0 -25px 18px -14px inset,rgba(205, 171, 37, 0.15) 0 1px 2px,rgba(224, 197, 43, 0.15) 0 2px 4px,rgba(212, 158, 33, 0.15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(165, 187, 44, 0.15) 0 16px 32px;
+      background-color: #ffa805;
+      cursor: pointer;
+      display: inline-block;
+      font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+      padding: 7px 20px;
+      text-align: center;
+      text-decoration: none;
+      transition: all 250ms;
+      border: 0;
+      font-size: 16px;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      font-weight:600;
+    }
+    
+    .button-33:hover {
+      box-shadow: rgba(236, 128, 27, 0.35) 0 -25px 18px -14px inset,rgba(187, 146, 44, 0.25) 0 1px 2px,rgba(140, 217, 40, 0.25) 0 2px 4px,rgba(144, 187, 44, 0.25) 0 4px 8px,rgba(187, 185, 44, 0.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+      transform: scale(1.05) rotate(-1deg);
+    }
+    a:hover{
+      color:black
+    }
+    .route-links{
+      position: relative; font-weight: 800;color:#ffa805;text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div style="
+        width: 100%;
+        position: relative;
+           background-image: url('https://github.com/Mayurdhamgunde/Cementproject-images/blob/master/CRANE.jpg?raw=true');
+           background-repeat: no-repeat;
+           background-size:cover;
+           background-position:center;
+          
+        height: 750px;
+        overflow: hidden;
+        text-align: left;
+        font-size: 36px;
+        color: #000;
+        font-family: Inter;
+      ">
+      <span>
+        
+      </span>
+    <img style="
+          position: absolute;
+          top: calc(64% - 363px);
+          left: 900px;
+          border-radius: 20px;
+          width: 28vw;
+          height: 82vh;
+          object-fit: cover;
+
+        " alt="" src="https://github.com/Mayurdhamgunde/Cementproject-images/blob/master/cement-worker.jpg?raw=true" />
+
+    <b style="position: absolute; top: 33px; left: 100px;color:#ffa805">Cement Prediction</b>
+    <b style="
+          position: absolute;
+          top: 220px;
+          left: 100px;
+          font-size: 78px;
+          display: inline-block;
+          width: 505px;
+          color:whitesmoke;
+        ">Cement Prediction</b>
+    <div style="
+          position: absolute;
+          top: 33px;
+          left: 756px;
+          width: 584px;
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: flex-start;
+          gap: 104px;
+        ">
+      <div class="route-links"><a class="route-links" href="{{url_for('index3')}}" target="_blank">Form</a></div>
+      <div class="route-links"><a class="route-links" href="{{url_for('index1')}}" target="_blank">Dashboard</a></div>
+      <div class="route-links"><a class="route-links" href="{{url_for('index2')}}" target="_blank">Feedback</a></div>
+    </div>
+    <div style="
+          position: absolute;
+          top: 500px;
+          left: 100px;
+          width: 400px;
+          height: 100px;
+          font-size: 40px;
+        ">
+      <button style="
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 400px;
+            height: 100px;
+            border:none;
+            font-size:larger;
+          " class="button-33">
+          <a style="text-decoration: none;font-weight:600;" href="./predictionForm.html" target="_blank">Predict Now</a>
+        </button>
+
+    </div>
+  </div>
+</body>
+
+</html>

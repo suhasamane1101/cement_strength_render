@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+          font-family: sans-serif;
+        }
+    
+        body {
+          display: flex;
+          height:auto;
+          justify-content: center;
+          align-items: center;
+          background: url("https://github.com/Mayurdhamgunde/Cementproject-images/blob/master/predictionBG.png?raw=true");
+          background-size: cover;
+          margin-top: 20px;
+        }
+    
+        .container {
+          width: 40%;
+          max-width: 650px;
+          background: rgba(0, 0, 0, 0.5);
+          padding: 18px;
+          margin: -14px 18px;
+          border-radius: 10px;
+          box-shadow: inset -2px 2px 2px rgb(28, 28, 28);
+        }
+    
+        .form-title {
+          font-size: 26px;
+          font-weight: 800;
+          text-align: center;
+          padding-bottom: 6px;
+          color: rgb(255, 166, 0);
+          text-shadow: 2px 2px 2px black;
+          border-bottom: solid 1px white;
+          text-transform: uppercase;
+        }
+    
+        .form-title2 {
+          font-size: 14px;
+          font-weight: 800;
+          text-align: center;
+          padding-bottom: 6px;
+          color: rgb(255, 166, 0);
+          text-shadow: 2px 2px 2px black;
+          border-bottom: solid 1px white;
+          text-transform: uppercase;
+        }
+    
+        .main-user-info {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          padding: 20px 0;
+        }
+    
+        .user-input-box:nth-child(2n) {
+          justify-content: end;
+        }
+    
+        .user-input-box {
+          display: flex;
+          flex-wrap: wrap;
+          width: 50%;
+          padding-bottom: 15px;
+        }
+    
+        .user-input-box label {
+          width: 95%;
+          color: white;
+          font-size: 20px;
+          font-weight: 400;
+          margin: 5px 0;
+        }
+    
+        .user-input-box input {
+          height: 40px;
+          width: 95%;
+          border-radius: 7px;
+          outline: none;
+          border: 1px solid grey;
+          padding: 0 10px;
+        }
+    
+    
+        .form-submit-btn {
+          margin-top: 5px;
+        }
+    
+        .form-submit-btn input {
+          display: block;
+          width: 100%;
+          margin-top: 10px;
+          font-size: 20px;
+          padding: 10px;
+          border: none;
+          border-radius: 3px;
+          background: rgb(220, 146, 9);
+          color: black;
+          font-weight: bold;
+        }
+    
+        .form-submit-btn input:hover {
+          background: orange;
+          color: wheat;
+          cursor: pointer;
+          box-shadow: 2px 2px 2px black;
+    
+        }
+    
+        @media(max-width: 600px) {
+          .container {
+            min-width: 280px;
+          }
+    
+          .user-input-box {
+            margin-bottom: 12px;
+            width: 100%;
+          }
+    
+          .user-input-box:nth-child(2n) {
+            justify-content: space-between;
+          }
+    
+          .main-user-info {
+            max-height: 380px;
+            overflow: auto;
+          }
+    
+          .main-user-info::-webkit-scrollbar {
+            width: 0;
+          }
+        }
+        .btn1{
+            display: block;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 20px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 3px;
+    background: rgb(220, 146, 9);
+    color: black;
+    font-weight: bold;
+    white-space: pre;
+    padding-block: 6px;
+    padding-inline: 207px;
+    appearance: auto;
+    user-select: none;
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+        }
+      </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login">
+            
+            <!-- Main Input For Receiving Query to our ML -->
+            <h1 class="head form-title" >Concrete Cement Strength Prediction</h1>
+            <form action="{{ url_for('predict_datapoint')}}" method="post">
+                <div class="main-user-info">
+
+
+                <div class="user-input-box">
+                    <label for="cement">Cement</label>
+                    <input type="text" id="cement" name="cement" placeholder="0.00" required="required" /><br>
+                </div>
+
+
+                <div class="user-input-box">
+                    <label for="blastFurnace">BlastFurnace</label>
+                    <input type="text" id="blastFurnace" name="blastFurnace" placeholder="0.00" required="required" /><br>
+                </div>
+
+                <div class="user-input-box">
+                    <label for="flyAsh">flyAsh</label>
+                    <input type="text" id="flyAsh" name="flyAsh" placeholder="0.00" required="required" /><br>
+                </div>
+
+                <div class="user-input-box">
+                    <label for="water">Water</label>
+                    <input type="text" id="water" name="water" placeholder="0.00" required="required" /><br>
+                </div>
+
+                <div class="user-input-box">
+                    <label for="superplasticizer">superplasticizer</label>
+                    <input type="text" id="superplasticizer" name="superplasticizer" placeholder="0.00" required="required" /><br>
+                </div>
+
+                <div class="user-input-box">
+                    <label for="courseAggregate">courseAggregate</label>
+                    <input type="text" name="courseAggregate" placeholder="0.00" id="courseAggregate" required="required" /><br>
+                </div>
+
+                <div class="user-input-box">
+                    <label for="fineaggregate">fineaggregate</label>
+                    <input type="text" name="fineaggregate" placeholder="0.00" id="fineaggregate" required="required" /><br>
+                </div>
+
+                <div class="user-input-box">
+                    <label for="cement">Cement</label>
+                    <input type="text" name="age" placeholder="0.00" required="required" /><br>
+                </div>
+        
+        
+        
+                <div class="form-submit-btn">
+                    <button type="submit" class="btn1">Predict</button>
+                </div>
+            </div>
+            </form>
+         <h2 class="form-title2">
+            THE Concrete Cement Strength prediction is {{strength}}
+         </h2>
+
+    </div>
+
+
+</body>
+</html>
